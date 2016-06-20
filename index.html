@@ -30,6 +30,59 @@
 
       
 </head>
+<script>
+ function detectedLang(){
+alert("detectedLang");
+	var lang = window.navigator.userLanguage || window.navigator.language;
+	if(lang){
+		if(lang.length > 2){
+			lang = lang.substring(0, 2);
+		}
+		if (lang != 'en' && lang != 'fr' && lang != 'ru') {
+        lang = 'en';
+		alert("lang");
+		}
+	}
+	else{
+		lang = 'en';
+		alert("lang");
+	}
+	var resourcePath = 'resources/strings.'+lang + '.js';
+	 alert(resourcePath);
+	if(!IsExist(resourcePath)) throw new Exception("qqqqq");
+	var head = document.head || document.getElementsByTagName('head')[0];
+	var scriptEl = document.createElement('script');
+	script.type = 'text/javascript';
+	scriptEl.src = resourcePath;
+	head.appendChild(scriptEl);
+ }
+
+ window.onload = function(){
+ alert("load");
+    detectedLang();
+	var resElms = document.querySelectorAll('[data-res]');
+	for (var n = 0; n < resElms.length; n++) {
+		var resEl = resElms[n];
+		var resKey = resEl.getAttribute('data-res');
+		if (resKey) {
+			for (var key in resources) {
+				if (key.indexOf(resKey) == 0) {
+					var resValue = resources[key];
+					if (key.indexOf('.') == -1) {
+						resEl.innerHTML = resValue;
+					}
+					else {
+						var attrKey = key.substring(key.indexOf('.') + 1);
+						resEl[attrKey] = resValue;
+					}
+				}
+			}
+		}
+	}
+ };
+	
+
+</script>
 
 <body id="page-top" class="index" >
 
@@ -54,16 +107,16 @@
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#portfolio">Scope</a>
+                        <a data-res="navLinksScope"  href="#portfolio">Scope</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#about">About</a>
+                        <a data-res="navLinksAbout" href="#about">About</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="#client">Client</a>
+                        <a data-res="navLinksClient" href="#client">Client</a>
                     </li>
                      <li class="page-scroll">
-                        <a href="#technolagy">Technology</a>
+                        <a data-res="navLinksTechnology" href="#technolagy">Technology</a>
                     </li>
                 </ul>
             </div>
@@ -373,7 +426,8 @@ Our team is an experienced and dynamic developed IT professionals. </p>
                 <div class="row">
                     <div class="footer-col col-md-4">
                         <h3>Location</h3>
-                        <p>3481 Melrose Place<br>Beverly Hills, CA 90210</p>
+                        <p> Minsk, Belarus Av. Timiriazeva 65A, office 603</p>
+						
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>Contacts</h3>
@@ -381,11 +435,16 @@ Our team is an experienced and dynamic developed IT professionals. </p>
                              <dt><i class="fa fa-skype" aria-hidden="true"></i></dt>
                              <dd><p>Iighload</p></dd>
                         </dl>
+						 <dl class="dl-horizontal">
+                             <dt><i class="fa fa-skype" aria-hidden="true"></i></dt>
+                             <dd><p>Iighload</p></dd>
+                        </dl>
+						 <dl class="dl-horizontal">
+                             <dt><i class="fa fa-skype" aria-hidden="true"></i></dt>
+                             <dd><p>Iighload</p></dd>
+                        </dl>
                     </div>
-                    <div class="footer-col col-md-4">
-                        <h3>About Freelancer</h3>
-                        <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
-                    </div>
+                    
                 </div>
             </div>
         </div>

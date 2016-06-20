@@ -1,0 +1,12 @@
+[0620/140722:ERROR:process_reader_win.cc(141)] SuspendThread: Отказано в доступе. (0x5)
+[0620/140722:ERROR:process_reader_win.cc(141)] SuspendThread: Отказано в доступе. (0x5)
+[0620/140722:ERROR:process_reader_win.cc(141)] SuspendThread: Отказано в доступе. (0x5)
+[0620/140722:ERROR:process_reader_win.cc(141)] SuspendThread: Отказано в доступе. (0x5)
+[0620/140722:ERROR:process_reader_win.cc(141)] SuspendThread: Отказано в доступе. (0x5)
+[0620/140722:ERROR:process_reader_win.cc(141)] SuspendThread: Отказано в доступе. (0x5)
+[0620/140722:ERROR:process_reader_win.cc(141)] SuspendThread: Отказано в доступе. (0x5)
+[0620/140722:ERROR:process_reader_win.cc(141)] SuspendThread: Отказано в доступе. (0x5)
+[0620/140722:ERROR:process_reader_win.cc(141)] SuspendThread: Отказано в доступе. (0x5)
+[0620/140722:ERROR:process_reader_win.cc(141)] SuspendThread: Отказано в доступе. (0x5)
+[0620/140722:ERROR:exception_snapshot_win.cc(57)] thread ID 3852 not found in process
+[0620/140722:WARNING:crash_report_exception_handler.cc(60)] ProcessSnapshotWin::InitializeException failed
