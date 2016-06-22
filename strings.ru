@@ -5,3 +5,5 @@ var resources = {
 	"navLinksTechnology": "технологии"
 	
 }
+
+ 
