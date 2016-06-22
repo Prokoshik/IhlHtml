@@ -31,36 +31,16 @@
       
 </head>
 <script>
- function detectedLang(){
-alert("detectedLang");
-	var lang = window.navigator.userLanguage || window.navigator.language;
-	if(lang){
-		if(lang.length > 2){
-			lang = lang.substring(0, 2);
-		}
-		if (lang != 'en' && lang != 'fr' && lang != 'ru') {
-        lang = 'en';
-		alert("lang");
-		}
-	}
-	else{
-		lang = 'en';
-		alert("lang");
-	}
-	var resourcePath = 'resources/strings.'+lang + '.js';
-	 alert(resourcePath);
-	if(!IsExist(resourcePath)) throw new Exception("qqqqq");
-	var head = document.head || document.getElementsByTagName('head')[0];
-	var scriptEl = document.createElement('script');
-	script.type = 'text/javascript';
-	scriptEl.src = resourcePath;
-	head.appendChild(scriptEl);
- }
-
- window.onload = function(){
- alert("load");
-    detectedLang();
+el= document.getElementById("page-top"); 
+if (!el) {
+ detectedLang();
 	var resElms = document.querySelectorAll('[data-res]');
+	
+	for (var i = 0; i < resElms.length; i++) {
+	alert("resElms11111");
+	alert( 'Вам сообщение ' + resElms[i] );
+}
+	
 	for (var n = 0; n < resElms.length; n++) {
 		var resEl = resElms[n];
 		var resKey = resEl.getAttribute('data-res');
@@ -79,8 +59,36 @@ alert("detectedLang");
 			}
 		}
 	}
- };
+};
+function detectedLang(){
+alert("detectedLang");
+	var lang = window.navigator.userLanguage || window.navigator.language;
+	if(lang){
+		if(lang.length > 2){
+			lang = lang.substring(0, 2);
+		}
+		if (lang != 'en' && lang != 'fr' && lang != 'ru') {
+        lang = 'en';
+		alert("lang");
+		}
+	}
+	else{
+		lang = 'en';
+		alert("lang");
+	}
+	var resourcePath = 'C:/Users/vikap/Desktop/ihighload/resources/strings.'+lang + '.js';
+	 alert(resourcePath);
+	var head = document.head || document.getElementsByTagName('head')[0];
+	var scriptEl = document.createElement('script');
 	
+	scriptEl.src = resourcePath;
+	head.appendChild(scriptEl);
+ };
+</script>
+
+
+
+
 
 </script>
 
@@ -88,6 +96,7 @@ alert("detectedLang");
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top" style="    background-color : #3d6889">
+
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -101,13 +110,13 @@ alert("detectedLang");
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div  class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
                     <li class="page-scroll">
-                        <a data-res="navLinksScope"  href="#portfolio">Scope</a>
+                        <a  data-res="navLinksScope"  href="#portfolio">Scope</a>
                     </li>
                     <li class="page-scroll">
                         <a data-res="navLinksAbout" href="#about">About</a>
@@ -120,6 +129,7 @@ alert("detectedLang");
                     </li>
                 </ul>
             </div>
+			
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
